@@ -1,103 +1,92 @@
-import Image from "next/image";
+"use client"
+import Navbar from "./navbar";
+import { SiLine } from "react-icons/si";
+import { Phone, Mail, Facebook, Github, Instagram, X } from 'lucide-react';
+import imageInthi from './assets/inthi.png';
+import sunshine from './assets/sunshine.jpg';
+import bg from './assets/bg.png';
+import { useState } from "react";
+import './style/animation.css';
+import Projects from "./projects";
+import Figmas from "./figma";
 
 export default function Home() {
-  return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+  const [bar, setBar] = useState(false);
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+  return (
+    <div>
+      <Navbar />
+      <section id="home" className="mt-20">
+        <div className="flex gap-4 flex-col-reverse items-center md:flex-row">
+
+          <div className="bg-black w-full md:w-1/3 h-[100vh] flex items-center justify-center shadow-sm text-gray-900 py-4 slide-left-delay bg-center bg-no-repeat bg-contain" style={{ backgroundImage: `url(${bg.src})` }}>
+            <div className="flex flex-col items-center justify-center text-white">
+              <img src={imageInthi.src} alt="รูปโปรไฟล์" className="w-32 h-32 rounded-full" />
+              <div className="py-2 text-center leading-loose">
+                <p className="font-semibold">อินทิรา  ฤทธิพรม (บีม)</p>
+                <div className="text-sm">
+                  นักศึกษาชั้นปีที่ 4 มหาวิทยาลัยขอนแก่น <br />
+                  วิทยาลัยการคอมพิวเตอร์ สาขา เทคโนโลยีสารสนเทศ <br />
+                  เกรดเฉลี่ยสะสม 3.00
+                </div>
+                <ul className="mt-2 flex items-center justify-center gap-4 py-2">
+                  <li className="bg-amber-300 h-7 w-7 flex items-center justify-center rounded-full hover:bg-amber-400 transition-tranform duration-200 ease-in-out hover:translate-y-1"><a href="https://www.facebook.com/inthi.ritt"><Facebook size={15} className="text-gray-700" /></a></li>
+                  <li className="bg-amber-300 h-7 w-7 flex items-center justify-center rounded-full hover:bg-amber-400 transition-tranform duration-200 ease-in-out hover:translate-y-1"><a href="https://line.me/ti/p/0936404330"><SiLine size={15} className="text-gray-700" /></a></li>
+                  <li className="bg-amber-300 h-7 w-7 flex items-center justify-center rounded-full hover:bg-amber-400 transition-tranform duration-200 ease-in-out hover:translate-y-1"><a href="https://www.instagram.com/xnxhi_xitt/"><Instagram size={15} className="text-gray-700" /></a></li>
+                  <li className="bg-amber-300 h-7 w-7 flex items-center justify-center rounded-full hover:bg-amber-400 transition-tranform duration-200 ease-in-out hover:translate-y-1"><a href="https://github.com/Inthira2546"><Github size={15} className="text-gray-700" /></a></li>
+                </ul>
+                <hr className="text-gray-200" />
+                <ul className="text-sm border p-4 text-center m-4 rounded">
+                  <li className="flex gap-2 items-center"><Phone size={16} className="text-gray-600" /> 065-3710277</li>
+                  <li className="flex gap-2 items-center"><Mail size={16} className="text-gray-600" /> Inthira.r@kkumail.com</li>
+                </ul>
+              </div>
+              <div>
+                <span className="flex items-center justify-center gap-1">Skill</span>
+                <hr className="text-gray-200 py-1" />
+                <ul className="list-disc text-white text-sm leading-loose">
+                  <li>HTML, CSS, Tailwind</li>
+                  <li>Responsive Design</li>
+                  <li>Ux/Ui Design</li>
+                  <li>Figma</li>
+                  <li>Android: Kotlin, Flutter (Beginner)</li>
+                  <li>MySQL, Firebase</li>
+                  <li>Microsoft Office</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div className="w-full md:w-2/3 h-[100vh] flex items-center justify-center bg-[#2b3b2b] relative">
+            <div className="absolute bottom-0 left-0 w-full h-1/3 bg-black"></div>
+            <h1 className="absolute top-15 md:top-8 left-25 text-[95px] md:text-[120px] font-bold text-white z-10 text-shadow-gray-600 slide-left">
+              PORTFOLIO
+            </h1>
+
+            <div className="absolute top-38 left-48 text-[80px] font-extrabold text-transparent opacity-20 select-none z-0 slide-left-delay" style={{ WebkitTextStroke: '2px #c8b668' }}>
+              PORTFOLIO<br /> ...TROP <br /> TRFOLIO
+            </div>
+
+            <div className="absolute top-36 left-16 bg-[#d46b36]/85 w-80 h-96 flex items-center justify-center overflow-hidden">
+              <img src={sunshine.src} alt="รูปโปรไฟล์" className="opacity-85 object-cover w-full h-full" />
+            </div>
+            <p className="absolute bottom-8 2xl:bottom-48 left-20 max-w-xl text-sm text-gray-200 bg-[#d46b36]/95 px-3 py-2 font-semibold leading-loose">มีความเชี่ยวชาญในรายวิชาเลือกด้านการพัฒนาแอปพลิเคชันบนมือถือและเว็บ มีทักษะในการพัฒนาโปรแกรมโดยใช้เทคโนโลยีสมัยใหม่ พร้อมทั้งมีความสามารถในการทำงานร่วมกับผู้อื่นอย่างมีประสิทธิภาพ สามารถทำหน้าที่ทั้งในฐานะผู้นำหรือสมาชิกทีมตามความจำเป็น เปิดรับคำติชมอย่างต่อเนื่อง และสามารถทำงานได้อย่างมีประสิทธิผลภายใต้แรงกดดัน</p>
+          </div>
+
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+      </section>
+      <Projects />
+      <Figmas />
+      <footer className="bg-black text-gray-400 py-6 mt-2">
+        <div className="mx-auto flex flex-col md:flex-row justify-between items-center px-6">
+          <p>© 2025 Inthira Ritthiprom</p>
+          <div className="flex gap-2 mt-2 md:mt-0">
+            <div className="w-7 h-7 bg-gray-600 flex items-center justify-center rounded-full"><a href="mailto:inthira@kkumail.com" className="hover:text-white"><Mail size={16}/></a></div>
+            <div className="w-7 h-7 bg-gray-600 flex items-center justify-center rounded-full"><a href="https://github.com/Inthira2546" className="hover:text-white"><Github size={16}/></a></div>
+          </div>
+        </div>
       </footer>
+
     </div>
   );
 }

@@ -1,0 +1,39 @@
+
+@keyframes slideFromLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.slide-left {
+  animation: slideFromLeft 1.2s ease-out forwards;
+}
+
+.slide-left-delay {
+  animation: slideFromLeft 1.5s ease-out forwards;
+}
+
+
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.project-card {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.project-card.animate {
+  animation: fadeUp 0.5s forwards;
+}
