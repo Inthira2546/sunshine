@@ -9,7 +9,7 @@ import img3 from "../assets/3.png";
 import gemini from "../assets/gemini.png";
 import certificate from "@/app/assets/cer.png";
 import geogebra from "../assets/geogebra.png";
-import { ChevronLeft, BookOpen , Link2 } from "lucide-react";
+import { ChevronLeft, BookOpen, Link2 } from "lucide-react";
 
 export default function DetailFinals() {
   const [run, setRun] = useState(true);
@@ -68,9 +68,8 @@ export default function DetailFinals() {
       <Joyride
         steps={steps}
         run={true}
-        continuous
-        showProgress
-        showSkipButton
+        continuous={true}
+        showSkipButton={true}
       />
       <h1 className="text-4xl font-bold text-center text-[#d46b36] mb-4">
         เว็บแอปพลิเคชัน "Trigo"
@@ -154,7 +153,7 @@ export default function DetailFinals() {
       <div>
         <div className="self-start px-4 py-2 bg-transparent border border-[#00b4d8] text-[#00b4d8] rounded-md hover:bg-[#00b4d8] hover:text-white transition-all duration-300 inline-block mt-2">
           <button onClick={() => setOpen(true)} className="flex items-center">
-            <BookOpen  className="mr-2" />
+            <BookOpen className="mr-2" />
             certificate
           </button>
         </div>
