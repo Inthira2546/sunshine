@@ -69,7 +69,6 @@ export default function DetailFinals() {
         steps={steps}
         run={true}
         continuous={true}
-        showSkipButton={true}
       />
       <h1 className="text-4xl font-bold text-center text-[#d46b36] mb-4">
         เว็บแอปพลิเคชัน "Trigo"
